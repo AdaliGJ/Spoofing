@@ -128,7 +128,7 @@ while header_checkshum > int('0xffff', 16):
 header_checkshum = int('0xffff', 16) - header_checkshum
     
 
-header_checkshum=hex(header_checkshum)
+header_checkshum='0x{:04X}'.format(header_checkshum)
 
 print("\nHeader Checksum: "+header_checkshum)
 
@@ -216,7 +216,7 @@ if tcp_checkshum > int('0xffff', 16):
 tcp_checkshum = int('0xffff', 16) - tcp_checkshum
     
 
-tcp_checkshum=hex(tcp_checkshum)
+tcp_checkshum='0x{:04X}'.format(tcp_checkshum)
 print("\nTCP Checksum: "+tcp_checkshum+"\n")
 
 tcp_checkshum=tcp_checkshum[2:]
