@@ -148,11 +148,11 @@ ip_header_row3 = ip_header_row3_minuscheck+ip_header_row3
 
 
 #Armar IP Header
-ip_header  = bytes([int(x,16) for x in ip_header_row1])  # Version, IHL, Type of Service | Total Length
-ip_header += bytes([int(x,16) for x in ip_header_row2])  # Identification | Flags, Fragment Offset
-ip_header += bytes([int(x,16) for x in ip_header_row3])  # TTL, Protocol | Header Checksum
-ip_header += bytes([int(x,0) for x in ip_o_separada])  # Source Address
-ip_header += bytes([int(x,0) for x in ip_d_separada])   # Destination Address
+ip_header  = bytes([int(x,16) for x in ip_header_row1])  # Version, IHL, Tipo de servicio | Longitud Total
+ip_header += bytes([int(x,16) for x in ip_header_row2])  # Identificación | Banderas, Desplazamiento del fragmento
+ip_header += bytes([int(x,16) for x in ip_header_row3])  # Tiempo de vida, Protocolo | Checksum
+ip_header += bytes([int(x,0) for x in ip_o_separada])    # Dirección origen
+ip_header += bytes([int(x,0) for x in ip_d_separada])    # Dirección destino
 
 
 
@@ -237,11 +237,11 @@ tcp_header_row5 = tcp_header_row5 + tcp_header_row5_minusckeck
 
 
 #Armar TCP
-tcp_header  = bytes([int(x,16) for x in tcp_header_row1]) # Source Port | Destination Port
-tcp_header += bytes([int(x,16) for x in tcp_header_row2]) # Sequence Number
-tcp_header += bytes([int(x,16) for x in tcp_header_row3]) # Acknowledgement Number
-tcp_header += bytes([int(x,16) for x in tcp_header_row4]) # Data Offset, Reserved, Flags | Window Size
-tcp_header += bytes([int(x,16) for x in tcp_header_row5]) # Checksum | Urgent Pointer
+tcp_header  = bytes([int(x,16) for x in tcp_header_row1]) # Puerto Origen | Puerto Destino
+tcp_header += bytes([int(x,16) for x in tcp_header_row2]) # Número de Secuencia
+tcp_header += bytes([int(x,16) for x in tcp_header_row3]) # Número de acuse de recibo
+tcp_header += bytes([int(x,16) for x in tcp_header_row4]) # L. Cabecera, Reservado, Banderas | Ventana
+tcp_header += bytes([int(x,16) for x in tcp_header_row5]) # Checksum | Puntero Urgente
 
 
 #Unir Paquete
