@@ -20,7 +20,7 @@ origen_correcto = 0
 destino_correcto = 0
 
 #IP Origen Dinámica
-ip_o = input('Ingrese la Dirección IP de origen: ')
+ip_o = input('Ingrese la Dirección IP de origen con el formato xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx: ')
 
 
 
@@ -71,7 +71,7 @@ for _ in ip_o_separada:
 #print(bytes([int(x,0) for x in ip_o_separada]))
 
 #IP Destino Dinámica
-ip_d = input('Ingrese la Dirección IP de destino: ')
+ip_d = input('Ingrese la Dirección IP de destino con el formato xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx: ')
 
 
 
