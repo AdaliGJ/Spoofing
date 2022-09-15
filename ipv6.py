@@ -3,7 +3,7 @@ import string
 from ipaddress import ip_address, IPv4Address 
 
 #Validar dirección IP
-def validIPAddress(IP: str) -> str: 
+def validarIP(IP: str) -> str: 
     try: 
         return "IPv4" if type(ip_address(IP)) is IPv4Address else "IPv6"
     except ValueError: 
@@ -27,9 +27,9 @@ ip_o = input('Ingrese la Dirección IP de origen con el formato xxxx:xxxx:xxxx:x
 
 #Verificar validez de la IP
 while origen_correcto == 0:
-    if validIPAddress(ip_o)=="IPv4":
+    if validarIP(ip_o)=="IPv4":
         ip_o = input('Error: ingrese una Dirección IPv6: ')
-    elif validIPAddress(ip_o)=="IPv6":
+    elif validarIP(ip_o)=="IPv6":
         origen_correcto = 1
     else:
         ip_o = input('Error: ingrese una Dirección IP válida: ')
@@ -80,9 +80,9 @@ ip_d = input('Ingrese la Dirección IP de destino con el formato xxxx:xxxx:xxxx:
 
 #Verificar validez de la IP
 while destino_correcto == 0:
-    if validIPAddress(ip_d)=="IPv4":
+    if validarIP(ip_d)=="IPv4":
         ip_d = input('Error: ingrese una Dirección IPv6: ')
-    elif validIPAddress(ip_d)=="IPv6":
+    elif validarIP(ip_d)=="IPv6":
         destino_correcto = 1
     else:
         ip_d = input('Error: ingrese una Dirección IP válida: ')
